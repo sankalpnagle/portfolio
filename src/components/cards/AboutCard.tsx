@@ -4,14 +4,12 @@ interface AboutCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  color: string;
 }
 
 const AboutCard: React.FC<AboutCardProps> = ({
   icon,
   title,
   description,
-  color,
 }) => (
   <div className={`bg-gray-50 rounded-2xl p-6 flex gap-3 items-start max-w-md`}>
     <div className="text-3xl">{icon}</div>

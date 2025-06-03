@@ -1,16 +1,8 @@
 import AboutCard from "@/components/cards/AboutCard";
-import {
-  FaSwatchbook,
-  FaCameraRetro,
-  FaCode,
-  FaCloud,
-} from "react-icons/fa6";
-import { MdOutlineAppShortcut } from "react-icons/md";
 import { VscCloud } from "react-icons/vsc";
 import { BsBrush } from "react-icons/bs";
 import { GoTerminal } from "react-icons/go";
 import { IoCodeSlashOutline } from "react-icons/io5";
-import Image from "next/image";
 
 
 const aboutCards = [
