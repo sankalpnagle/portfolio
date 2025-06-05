@@ -183,6 +183,7 @@ const Header = () => {
                   >
                     <Link
                       href={item.path}
+                      onClick={() => setIsMenuOpen(false)}
                       className={`block px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-all duration-200 ${
                         pathname === item.path ? "font-semibold bg-gray-50" : ""
                       }`}
