@@ -35,10 +35,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className=" max-w-5xl rounded-3xl p-0 overflow-hidden">
+      <DialogContent className=" max-w-4xl rounded-3xl p-0 overflow-hidden">
         <div className="p-8 max-h-[80vh]  overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-center text-pink-500 mb-6">
+            <DialogTitle className="text-3xl font-bold text-center text-sky-500 mb-6">
               {project.title}
             </DialogTitle>
           </DialogHeader>
@@ -80,14 +80,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
           {/* Project Image */}
           <div
-            className={`w-full h-64 flex items-center justify-center ${
+            className={`w-full  flex items-center justify-center ${
               project.bg || "bg-gray-100"
             } mb-6`}
           >
             <img
               src={project.image}
               alt={project.title}
-              className="object-contain h-full max-h-60 w-auto"
+              className="object-contain w-full "
             />
           </div>
           <div className="text-gray-600 leading-relaxed">

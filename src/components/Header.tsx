@@ -126,9 +126,7 @@ const Header = () => {
               <motion.span
                 className="text-2xl font-bold text-[#0892e2] hover:text-gray-900"
                 layoutId="logo"
-              >
-                Portfolio
-              </motion.span>
+              ></motion.span>
             </motion.div>
           </Link>
 
