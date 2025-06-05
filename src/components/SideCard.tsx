@@ -11,6 +11,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaGithub,
 } from "react-icons/fa6";
 import img1 from "@/../public/images/me.jpg";
 import Image from "next/image";
@@ -32,25 +33,33 @@ const SideCard = () => {
       {/* Social Icons */}
       <div className="flex gap-3 mt-2">
         <a
-          href="#"
+          href="https://www.facebook.com/sankalpn/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-gray-100 p-2 rounded-lg hover:bg-blue-100 transition"
         >
           <FaFacebookF className="text-blue-600 w-5 h-5" />
         </a>
         <a
-          href="#"
+          href="https://github.com/sankalpnagle"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-gray-100 p-2 rounded-lg hover:bg-blue-100 transition"
         >
-          <FaTwitter className="text-sky-400 w-5 h-5" />
+          <FaGithub className="text-sky-400 w-5 h-5" />
         </a>
         <a
-          href="#"
+          href="https://www.instagram.com/sankalp_nagle/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-gray-100 p-2 rounded-lg hover:bg-pink-100 transition"
         >
           <FaInstagram className="text-pink-500 w-5 h-5" />
         </a>
         <a
-          href="#"
+          href="https://www.linkedin.com/in/sankalp-nagle-a54166199/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-gray-100 p-2 rounded-lg hover:bg-blue-100 transition"
         >
           <FaLinkedinIn className="text-blue-700 w-5 h-5" />
@@ -63,7 +72,12 @@ const SideCard = () => {
           <div>
             <div className="text-xs text-gray-400">Phone</div>
             <div className="text-sm font-medium text-gray-700">
-              +91 9302959198
+              <a
+                href="tel:+919302959198"
+                className="text-sm font-medium text-gray-700 hover:text-sky-400"
+              >
+                +91 9302959198
+              </a>
             </div>
           </div>
         </div>
@@ -72,7 +86,12 @@ const SideCard = () => {
           <div>
             <div className="text-xs text-gray-400">Email</div>
             <div className="text-sm font-medium text-gray-700">
-              sankalp.nagle06@gmail.com
+              <a
+                href="mailto:sankalp.nagle06@gmail.com"
+                className="text-sm font-medium text-gray-700 hover:text-sky-400"
+              >
+                sankalp.nagle06@gmail.com
+              </a>
             </div>
           </div>
         </div>
@@ -96,10 +115,14 @@ const SideCard = () => {
         </div>
       </div>
       {/* Download CV Button */}
-      <button className="mt-4 w-full flex items-center hover:cursor-pointer justify-center gap-2 bg-gradient-to-r from-sky-500 to-sky-700 text-white font-semibold py-3 rounded-xl shadow hover:from-sky-600 hover:to-sky-800 transition">
+      <a
+        href="/cv.pdf"
+        download="Sankalp_Nagle_Resume.pdf"
+        className="mt-4 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-sky-700 text-white font-semibold py-3 rounded-xl shadow hover:from-sky-600 hover:to-sky-800 transition"
+      >
         <ArrowDownTrayIcon className="w-5 h-5" />
         Download CV
-      </button>
+      </a>
     </div>
   );
 };
