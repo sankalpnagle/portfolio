@@ -52,9 +52,9 @@ const projects = [
     type: "Web App",
     client: "Personal Project",
     languages: "React, Redux, Node.js",
-    preview: "",
+    preview: "https://main.d36pecy2ni8irx.amplifyapp.com/dashboard",
     description:
-      "A responsive dashboard that displays product sales data with weekly and monthly filters. It features interactive charts, graphs, and product management tools to help visualize and monitor sales performance.",
+      "A responsive and user-friendly dashboard designed to display and monitor product sales data in both weekly and monthly views. The dashboard features interactive bar charts and graphs that visually represent key metrics such as total sales, revenue trends, and top-selling products. Users can easily filter data by time periods to gain insights into performance over specific intervals. In addition to sales analytics, the dashboard also allows users to track payment statuses and view recent transactions. With integrated product management tools, it enables efficient monitoring of inventory, product listings, and overall business performance—all in one centralized interface optimized for desktop and mobile devices.",
   },
 ];
 
