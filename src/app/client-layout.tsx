@@ -14,7 +14,7 @@ export default function ClientLayout({
     <>
       <MovingGradientBg />
       <Header />
-      <div className="flex flex-col-reverse sm:flex-row sm:mt-32 mt-24 gap-x-6 gap-y-4 w-11/12 mx-auto mb-10">
+      <div className="flex flex-col-reverse sm:flex-row sm:pt-32 pt-24 gap-x-6 gap-y-4 w-11/12 mx-auto mb-10">
         <aside className="sm:w-[45%] sm:mt-0 mt-16  w-full ">
           <SideCard />
         </aside>

@@ -35,42 +35,42 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className=" max-w-4xl rounded-3xl p-0 overflow-hidden">
-        <div className="p-8 max-h-[80vh]  overflow-y-auto">
+      <DialogContent className="max-w-4xl rounded-3xl p-0 overflow-hidden w-[95vw] sm:w-full">
+        <div className="p-4 sm:p-8 max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-center text-sky-500 mb-6">
+            <DialogTitle className="text-2xl sm:text-3xl font-bold text-center text-sky-500 mb-4 sm:mb-6">
               {project.title}
             </DialogTitle>
           </DialogHeader>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6 text-base sm:text-lg">
             <div className="flex items-center gap-2">
-              <FaRegFileAlt className="text-xl" />
-              <span>
+              <FaRegFileAlt className="text-lg sm:text-xl" />
+              <span className="break-words">
                 Project : <b>{project.type}</b>
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <FaUser className="text-xl" />
-              <span>
+              <FaUser className="text-lg sm:text-xl" />
+              <span className="break-words">
                 Client : <b>{project.client}</b>
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <FaCode className="text-xl" />
-              <span>
+              <FaCode className="text-lg sm:text-xl" />
+              <span className="break-words">
                 Langages : <b>{project.languages}</b>
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <FaExternalLinkAlt className="text-xl" />
-              <span>
+              <FaExternalLinkAlt className="text-lg sm:text-xl" />
+              <span className="break-words">
                 Preview :{" "}
                 <b>
                   <a
                     href={project.preview}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline"
+                    className="underline break-all"
                   >
                     {project.preview}
                   </a>
@@ -80,17 +80,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
           {/* Project Image */}
           <div
-            className={`w-full  flex items-center justify-center ${
+            className={`w-full flex items-center justify-center ${
               project.bg || "bg-gray-100"
-            } mb-6`}
+            } mb-4 sm:mb-6 rounded-lg overflow-hidden`}
           >
             <img
               src={project.image}
               alt={project.title}
-              className="object-contain w-full "
+              className="object-contain w-full h-auto"
             />
           </div>
-          <div className="text-gray-600 leading-relaxed">
+          <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
             {project.description}
           </div>
         </div>

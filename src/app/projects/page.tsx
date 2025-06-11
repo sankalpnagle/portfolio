@@ -8,7 +8,6 @@ const projects = [
     image: "/images/pet-img.jpg",
     tags: "Pet Journal, Web App",
     title: "Story of Pets",
-    bg: "bg-[#fef4e9]",
     category: "Full Stack App",
     type: "Website",
     client: "Client Project",
@@ -21,7 +20,6 @@ const projects = [
     image: "/images/port-img.png",
     tags: "Marine Industry, Calculator",
     title: "Port Cost",
-    bg: "bg-[#e0f4ff]",
     category: "Enterprise App",
     type: "Web Application",
     client: "Gigatorb Software",
@@ -34,7 +32,6 @@ const projects = [
     image: "/images/phar-img.png",
     tags: "E-commerce, Pharmacy",
     title: "Salus Pharmacy",
-    bg: "bg-[#faf6e6]",
     category: "E-commerce Platform",
     type: "Website",
     client: "Client Product",
@@ -47,7 +44,6 @@ const projects = [
     image: "/images/dash-img.png",
     tags: "Dashboard, Data Visualization",
     title: "Dashboard",
-    bg: "bg-[#e6f1ff]",
     category: "Dashboard",
     type: "Web App",
     client: "Personal Project",
@@ -68,24 +64,26 @@ export default function Projects() {
       <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, idx) => (
-          <div
-            key={idx}
-            className="w-full cursor-pointer"
-            onClick={() => {
-              setSelected(project);
-              setOpen(true);
-            }}
-          >
-            <ProjectCard
-              image={project.image}
-              tags={project.tags}
-              title={project.title}
-              bg={project.bg}
-            />
-          </div>
-        ))}
+      <div className="w-full">
+        <div className="flex  flex-wrap justify-center gap-y-8 gap-x-8 w-full">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className=" cursor-pointer"
+              onClick={() => {
+                setSelected(project);
+                setOpen(true);
+              }}
+            >
+              <ProjectCard
+                image={project.image}
+                tags={project.tags}
+                title={project.title}
+                bg={project.bg}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Modal */}

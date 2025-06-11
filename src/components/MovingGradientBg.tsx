@@ -1,43 +1,18 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import Ball from "./Ball";
 
 export default function MovingGradientBg() {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const animate = async () => {
-      while (true) {
-        const x = Math.random() * (window.innerWidth - 150);
-        const y = Math.random() * (window.innerHeight - 150);
-
-        await controls.start({
-          x,
-          y,
-          transition: {
-            duration: 5,
-            ease: "easeInOut",
-          },
-        });
-      }
-    };
-
-    animate();
-  }, [controls]);
-
   return (
-    <motion.div
-      className="fixed -z-1 pointer-events-none rounded-full"
-      style={{
-        width: "650px",
-        height: "650px",
-        background:
-          "linear-gradient(120deg, #5ba9cd 0%, #add6ec 50%, #f5f2f9 100%)",
-        backgroundSize: "300% 300%",
-        filter: "blur(90px)",
-        opacity: 0.3,
-      }}
-      animate={controls}
-    />
+    <>
+      {Array.from({ length: 5 }).map((_, index) => (
+        <Ball
+          key={index}
+          size={200}
+          speed={2 + Math.random() * 2} // random speed between 2–4
+          initialAngle={(Math.PI * 2 * index) / 5} // evenly spread angles
+          color={`#5ba9cd`} // random pastel colors
+        />
+      ))}
+    </>
   );
 }

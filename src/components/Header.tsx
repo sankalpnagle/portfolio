@@ -37,22 +37,19 @@ const Header = () => {
       });
     }
   }, [pathname]);
-  
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-[#0892e2]">
-            
-          </Link>
+          <Link href="/" className="text-2xl font-bold text-[#0892e2]"></Link>
 
           {/* Desktop Nav */}
           <div className="relative hidden md:flex space-x-2">
             {/* Animated background indicator */}
             <motion.div
-              className="absolute border-b-[2.5px] -top-2 rounded-t-md bg-gray-100 border-b-sky-400  h-[3.9rem]  text-slate-900 "
+              className="absolute border-b-[2.5px] -top-2 rounded-t-md bg-gray-50 border-b-sky-400  h-[3.8rem]  text-slate-900 "
               animate={{
                 left: indicatorStyle.left,
                 width: indicatorStyle.width,
