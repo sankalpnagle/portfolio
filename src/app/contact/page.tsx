@@ -49,22 +49,30 @@ export default function Contact() {
     "border-0 border-b border-gray-300 dark:border-gray-700 rounded-none bg-transparent focus-visible:ring-0 focus:border-sky-400 focus-visible:border-sky-400 outline-none shadow-none text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400";
 
   return (
-    <div className="w-full mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow p-8 transition-colors duration-200">
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">Contact</h2>
+    <div className="w-full mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
+      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+        Contact
+      </h2>
       <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 mb-4">
-        <p className="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-1">
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-4">
+        <p className="text-lg font-semibold text-gray-500 dark:text-gray-100 mb-1">
           Have a project in mind or just want to say hello?
         </p>
         <form className="space-y-6 mt-5" onSubmit={handleSubmit}>
           <div>
-            <label className="block text-gray-600 dark:text-gray-300 mb-1" htmlFor="name">
+            <label
+              className="block text-gray-600 dark:text-gray-100 mb-1"
+              htmlFor="name"
+            >
               Name *
             </label>
             <Input id="name" name="name" required className={inputClass} />
           </div>
           <div>
-            <label className="block text-gray-600 dark:text-gray-300 mb-1" htmlFor="email">
+            <label
+              className="block text-gray-600 dark:text-gray-100 mb-1"
+              htmlFor="email"
+            >
               Email *
             </label>
             <Input
@@ -76,7 +84,10 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label className="block text-gray-600 dark:text-gray-300 mb-1" htmlFor="message">
+            <label
+              className="block text-gray-600 dark:text-gray-100 mb-1"
+              htmlFor="message"
+            >
               Message *
             </label>
             <Textarea
@@ -89,14 +100,16 @@ export default function Contact() {
           </div>
           <Button
             type="submit"
-            className="mt-2 w-32 bg-[#0892e2] hover:bg-sky-700 dark:bg-sky-600 dark:hover:bg-sky-700 hover:cursor-pointer"
+            className="mt-2 w-32 bg-[#0892e2] dark:text-white hover:bg-sky-700 dark:bg-sky-600 dark:hover:bg-sky-700 hover:cursor-pointer"
             disabled={loading}
           >
             {loading ? "Sending..." : "Submit"}
           </Button>
         </form>
         {result === "success" && (
-          <div className="text-green-600 dark:text-green-400 mt-4">Message sent successfully!</div>
+          <div className="text-green-600 dark:text-green-400 mt-4">
+            Message sent successfully!
+          </div>
         )}
         {result === "error" && (
           <div className="text-red-600 dark:text-red-400 mt-4">

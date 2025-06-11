@@ -18,7 +18,7 @@ import Image from "next/image";
 
 const SideCard = () => {
   return (
-    <div className="w-full mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow-lg p-6 flex flex-col items-center gap-4 transition-colors duration-200">
+    <div className="w-full mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow-lg p-6 flex flex-col items-center gap-4 transition-colors duration-200">
       {/* Profile Image */}
       <Image
         src={img1}

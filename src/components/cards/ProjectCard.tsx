@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   bg = "bg-pink-50",
 }) => (
   <div
-    className={`group bg-white dark:bg-gray-900 border  dark:border-2 overflow-hidden rounded-2xl max-w-xs w-full transition-all duration-300 hover:-translate-y-1`}
+    className={`group bg-gray-50 dark:bg-gray-900 border  dark:border-2 overflow-hidden rounded-2xl max-w-xs w-full transition-all duration-300 hover:-translate-y-1`}
   >
     <div
       className={`${bg} dark:bg-opacity-20 overflow-hidden mb-4 flex items-center justify-center h-48 sm:h-48 relative`}

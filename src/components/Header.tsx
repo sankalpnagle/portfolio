@@ -40,7 +40,7 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-md fixed w-full top-0 z-50 transition-colors duration-200">
+    <header className="bg-white dark:bg-gray-900 sm:right-14 right-0 rounded-xl sm:top-4 top-0 shadow-xs fixed sm:w-[45%] w-full  z-50 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -50,7 +50,15 @@ const Header = () => {
           <div className="relative hidden md:flex items-center space-x-4">
             {/* Animated background indicator */}
             <motion.div
-              className="absolute border-b-[2.5px] -top-2 rounded-t-md bg-gray-50 dark:bg-gray-800 border-b-sky-400 h-[3.8rem] text-slate-900 dark:text-slate-100"
+              className="absolute border-b-[2.5px] -top-3 rounded-t-md bg-gray-50 dark:bg-transparent border-b-sky-400 h-[4rem] text-slate-900 dark:text-slate-100"
+              animate={{
+                left: indicatorStyle.left,
+                width: indicatorStyle.width,
+              }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            />
+            <motion.div
+              className="absolute top-[3.2rem] left-0 w-full h-[2px] dark:bg-sky-400 rounded-md dark:shadow-[0_20px_40px_rgba(56,189,248,0.4)] blur-sm"
               animate={{
                 left: indicatorStyle.left,
                 width: indicatorStyle.width,

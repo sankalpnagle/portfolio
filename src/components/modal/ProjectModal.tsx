@@ -35,10 +35,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl rounded-3xl p-0 overflow-hidden w-[95vw] sm:w-full">
+      <DialogContent className="max-w-4xl rounded-3xl dark:bg-gray-900 p-0 overflow-hidden w-[95vw] sm:w-full">
         <div className="p-4 sm:p-8 max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl sm:text-3xl font-bold text-center text-sky-500 dark:text-sky-400 mb-4 sm:mb-6">
+            <DialogTitle className="text-2xl sm:text-3xl font-bold text-center text-sky-500 dark:text-white mb-4 sm:mb-6">
               {project.title}
             </DialogTitle>
           </DialogHeader>
@@ -80,9 +80,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
           {/* Project Image */}
           <div
-            className={`w-full flex items-center justify-center ${
-              project.bg || "bg-gray-100 dark:bg-gray-800"
-            } mb-4 sm:mb-6 rounded-lg overflow-hidden`}
+            className={`w-full flex items-center justify-center bg-gray-100 dark:bg-gray-900
+            mb-4 sm:mb-6 rounded-lg overflow-hidden`}
           >
             <img
               src={project.image}
@@ -90,7 +89,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               className="object-contain w-full h-auto"
             />
           </div>
-          <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-sm sm:text-base text-gray-600 dark:text-gray-200 leading-relaxed">
             {project.description}
           </div>
         </div>

@@ -37,13 +37,14 @@ const aboutCards = [
 
 export default function Home() {
   return (
-    <div className="mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow p-8 transition-colors duration-200">
+    <div className="mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
       {/* About Section */}
       <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
         About
       </h2>
-      <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
-      <p className="text-gray-600 dark:text-gray-400 mb-2">
+      <div className="w-20 h-1 bg-sky-400 rounded mb-3" />
+
+      <p className="text-gray-600 bg-white rounded-xl py-6 px-5 dark:bg-gray-900 transition-colors duration-200 dark:text-gray-100 mb-2">
         I'm a skilled Full-Stack MERN Developer focused on building scalable,
         responsive web applications using React, Next.js, Node.js, MongoDB, and
         SQL. I've delivered real-world solutions across healthcare, logistics,

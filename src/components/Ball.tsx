@@ -62,11 +62,11 @@ export default function Ball({
         height: size,
         x,
         y,
-        background: `radial-gradient(circle, ${color}, #add6ec)`,
+        background: `radial-gradient(circle, ${color}, #72abca)`,
         boxShadow: `0 0 50px ${color}`,
         zIndex: -10,
-        filter: "blur(60px)",
-        opacity: 0.6,
+        // filter: "blur(60px)",
+        // opacity: 0.9,
       }}
     />
   );
