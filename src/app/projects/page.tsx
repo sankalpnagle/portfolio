@@ -59,17 +59,19 @@ export default function Projects() {
   const [selected, setSelected] = useState<(typeof projects)[0] | null>(null);
 
   return (
-    <div className="w-full mx-auto bg-white rounded-3xl shadow p-8 min-h-screen">
-      <h2 className="text-3xl font-bold mb-2">Portfolio</h2>
+    <div className="w-full mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow p-8 min-h-screen transition-colors duration-200">
+      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+        Portfolio
+      </h2>
       <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
 
       {/* Projects Grid */}
       <div className="w-full">
-        <div className="flex  flex-wrap justify-center gap-y-8 gap-x-8 w-full">
+        <div className="flex flex-wrap justify-center gap-y-8 gap-x-8 w-full">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className=" cursor-pointer"
+              className="cursor-pointer"
               onClick={() => {
                 setSelected(project);
                 setOpen(true);
@@ -79,7 +81,6 @@ export default function Projects() {
                 image={project.image}
                 tags={project.tags}
                 title={project.title}
-                bg={project.bg}
               />
             </div>
           ))}

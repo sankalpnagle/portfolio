@@ -59,7 +59,6 @@ const experience = [
   },
 ];
 
-
 const certificates = [
   "React.js from CodeBetter in 2023.",
   "Java from Simplilearn in 2022.",
@@ -67,44 +66,71 @@ const certificates = [
 
 const Resume = () => {
   return (
-    <div className=" mx-auto bg-white rounded-3xl shadow p-8 min-h-screen">
-      <h2 className="text-3xl font-bold mb-2">Resume</h2>
+    <div className="mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow p-8 min-h-screen transition-colors duration-200">
+      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+        Resume
+      </h2>
       <div className="w-20 h-1 bg-sky-400 rounded mb-8" />
 
       {/* Education */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500">Education</h3>
-      <div className="bg-gray-50 rounded-xl p-5 mb-8">
+      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
+        Education
+      </h3>
+      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
         <div className="flex justify-between flex-col md:flex-row md:items-center mb-1">
-          <span className="font-bold">{education[0].institute}</span>
-          <span className="text-gray-500">{education[0].duration}</span>
+          <span className="font-bold text-gray-900 dark:text-gray-100">
+            {education[0].institute}
+          </span>
+          <span className="text-gray-500 dark:text-gray-400">
+            {education[0].duration}
+          </span>
         </div>
-        <div className="text-gray-700">{education[0].degree}</div>
+        <div className="text-gray-700 dark:text-gray-300">
+          {education[0].degree}
+        </div>
       </div>
 
       {/* Skills */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500">Skills</h3>
-      <div className="bg-gray-50 rounded-xl p-5 mb-8">
+      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
+        Skills
+      </h3>
+      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
         <ul className="space-y-2">
           {skills.map((skill, idx) => (
             <li key={idx}>
-              <span className="font-semibold">{skill.label}:</span>{" "}
-              <span className="text-gray-700">{skill.value}</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                {skill.label}:
+              </span>{" "}
+              <span className="text-gray-700 dark:text-gray-300">
+                {skill.value}
+              </span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Experience */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500">Experience</h3>
+      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
+        Experience
+      </h3>
       <div className="space-y-6 mb-8">
         {experience.map((exp, idx) => (
-          <div key={idx} className="bg-gray-50 rounded-xl p-5">
+          <div
+            key={idx}
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5"
+          >
             <div className="flex justify-between flex-col md:flex-row md:items-center mb-1">
-              <span className="font-bold">{exp.company}</span>
-              <span className="text-gray-500">{exp.duration}</span>
+              <span className="font-bold text-gray-900 dark:text-gray-100">
+                {exp.company}
+              </span>
+              <span className="text-gray-500 dark:text-gray-400">
+                {exp.duration}
+              </span>
             </div>
-            <p className="font-semibold"> {exp.title}</p>
-            <ul className="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+            <p className="font-semibold text-gray-800 dark:text-gray-200">
+              {exp.title}
+            </p>
+            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 mt-2 space-y-1">
               {exp.details.map((d, i) => (
                 <li key={i}>{d}</li>
               ))}
@@ -114,9 +140,11 @@ const Resume = () => {
       </div>
 
       {/* Certificates */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500">Certificates</h3>
-      <div className="bg-gray-50 rounded-xl p-5 mb-8">
-        <ul className="list-disc pl-5 text-gray-700 space-y-1">
+      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
+        Certificates
+      </h3>
+      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
+        <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
           {certificates.map((cert, idx) => (
             <li key={idx}>{cert}</li>
           ))}

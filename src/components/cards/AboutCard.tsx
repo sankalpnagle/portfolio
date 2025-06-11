@@ -4,18 +4,26 @@ interface AboutCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  color?: string;
 }
 
 const AboutCard: React.FC<AboutCardProps> = ({
   icon,
   title,
   description,
+  color = "bg-gray-50 dark:bg-gray-800/50",
 }) => (
-  <div className={`bg-gray-50 rounded-2xl p-6 flex gap-3 items-start max-w-md`}>
+  <div
+    className={`${color} dark:border-2 rounded-2xl p-6 flex gap-3 items-start max-w-md transition-colors duration-200`}
+  >
     <div className="text-3xl">{icon}</div>
     <div>
-      <h3 className="font-semibold text-xl mb-2">{title}</h3>
-      <p className="text-gray-500 leading-relaxed">{description}</p>
+      <h3 className="font-semibold text-xl mb-2 text-gray-900 dark:text-gray-100">
+        {title}
+      </h3>
+      <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+        {description}
+      </p>
     </div>
   </div>
 );
