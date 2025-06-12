@@ -37,7 +37,7 @@ const aboutCards = [
 
 export default function Home() {
   return (
-    <div className="mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
+    <div className="mx-auto bg-white dark:bg-gray-900/90 rounded-3xl border dark:shadow p-8 transition-colors duration-200">
       {/* About Section */}
       <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
         About

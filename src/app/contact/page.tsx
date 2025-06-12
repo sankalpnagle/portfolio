@@ -49,7 +49,7 @@ export default function Contact() {
     "border-0 border-b border-gray-300 dark:border-gray-700 rounded-none bg-transparent focus-visible:ring-0 focus:border-sky-400 focus-visible:border-sky-400 outline-none shadow-none text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400";
 
   return (
-    <div className="w-full mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
+    <div className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
       <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
         Contact
       </h2>

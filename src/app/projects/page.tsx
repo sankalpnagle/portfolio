@@ -59,7 +59,7 @@ export default function Projects() {
   const [selected, setSelected] = useState<(typeof projects)[0] | null>(null);
 
   return (
-    <div className="w-full mx-auto bg-white dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200">
+    <div className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200">
       <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
         Portfolio
       </h2>
