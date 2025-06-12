@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import ProjectCard from "@/components/cards/ProjectCard";
 import ProjectModal from "@/components/modal/ProjectModal";
+import { motion, type Variants } from "framer-motion";
 
 const projects = [
   {
@@ -54,50 +55,79 @@ const projects = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function Projects() {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<(typeof projects)[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <div className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200">
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-        Portfolio
-      </h2>
-      <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200"
+    >
+      <motion.div variants={itemVariants}>
+        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+          Portfolio
+        </h2>
+        <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
+      </motion.div>
 
-      {/* Projects Grid */}
-      <div className="w-full">
-        <div className="flex flex-wrap justify-center gap-y-8 gap-x-8 w-full">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="cursor-pointer"
-              onClick={() => {
-                setSelected(project);
-                setOpen(true);
-              }}
-            >
-              <ProjectCard
-                image={project.image}
-                tags={project.tags}
-                title={project.title}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <motion.div
+        variants={containerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {projects.map((project, idx) => (
+          <motion.div 
+            key={idx} 
+            variants={itemVariants}
+            onClick={() => {
+              setSelectedProject(project);
+              setOpen(true);
+            }}
+            className="cursor-pointer"
+          >
+            <ProjectCard
+              image={project.image}
+              tags={project.tags}
+              title={project.title}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
 
-      {/* Modal */}
-      {selected && (
+      {selectedProject && (
         <ProjectModal
           open={open}
-          onOpenChange={(o) => {
-            setOpen(o);
-            if (!o) setSelected(null);
+          onOpenChange={(isOpen) => {
+            setOpen(isOpen);
+            if (!isOpen) setSelectedProject(null);
           }}
-          project={selected}
+          project={selectedProject}
         />
       )}
-    </div>
+    </motion.div>
   );
 }

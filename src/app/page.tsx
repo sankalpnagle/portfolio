@@ -1,8 +1,10 @@
+"use client";
 import AboutCard from "@/components/cards/AboutCard";
 import { VscCloud } from "react-icons/vsc";
 import { BsBrush } from "react-icons/bs";
 import { GoTerminal } from "react-icons/go";
 import { IoCodeSlashOutline } from "react-icons/io5";
+import { motion, type Variants } from "framer-motion";
 
 const aboutCards = [
   {
@@ -35,16 +37,48 @@ const aboutCards = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function Home() {
   return (
-    <div className="mx-auto bg-white dark:bg-gray-900/90 rounded-3xl border dark:shadow p-8 transition-colors duration-200">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="mx-auto bg-white dark:bg-gray-900/90 rounded-3xl border dark:shadow p-8 transition-colors duration-200"
+    >
       {/* About Section */}
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-        About
-      </h2>
-      <div className="w-20 h-1 bg-sky-400 rounded mb-3" />
+      <motion.div variants={itemVariants}>
+        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+          About
+        </h2>
+        <div className="w-20 h-1 bg-sky-400 rounded mb-3" />
+      </motion.div>
 
-      <p className="text-gray-600 bg-white rounded-xl py-6 px-5 dark:bg-gray-900 transition-colors duration-200 dark:text-gray-100 mb-2">
+      <motion.p
+        variants={itemVariants}
+        className="text-gray-600 bg-white rounded-xl py-6 px-5 dark:bg-gray-900 transition-colors duration-200 dark:text-gray-100 mb-2"
+      >
         I'm a skilled Full-Stack MERN Developer focused on building scalable,
         responsive web applications using React, Next.js, Node.js, MongoDB, and
         SQL. I've delivered real-world solutions across healthcare, logistics,
@@ -52,23 +86,30 @@ export default function Home() {
         deployment on AWS. I write clean, maintainable code and work with modern
         tools like TypeScript, Prisma, and Docker to create high-performance
         applications.
-      </p>
+      </motion.p>
 
       {/* What I Do Section */}
-      <h3 className="text-2xl font-semibold my-6 text-gray-900 dark:text-gray-100">
-        What I Do!
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <motion.div variants={itemVariants}>
+        <h3 className="text-2xl font-semibold my-6 text-gray-900 dark:text-gray-100">
+          What I Do!
+        </h3>
+      </motion.div>
+
+      <motion.div
+        variants={containerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
+      >
         {aboutCards.map((card, idx) => (
-          <AboutCard
-            key={idx}
-            icon={card.icon}
-            title={card.title}
-            description={card.description}
-            color={card.color}
-          />
+          <motion.div key={idx} variants={itemVariants}>
+            <AboutCard
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+              color={card.color}
+            />
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

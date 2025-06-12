@@ -1,4 +1,27 @@
-import React from "react";
+"use client";
+import { motion, type Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 const education = [
   {
@@ -66,91 +89,184 @@ const certificates = [
 
 const Resume = () => {
   return (
-    <div className="mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200">
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-        Resume
-      </h2>
-      <div className="w-20 h-1 bg-sky-400 rounded mb-8" />
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 min-h-screen transition-colors duration-200"
+    >
+      <motion.div variants={itemVariants}>
+        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+          Resume
+        </h2>
+        <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
+      </motion.div>
 
       {/* Education */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
-        Education
-      </h3>
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
-        <div className="flex justify-between flex-col md:flex-row md:items-center mb-1">
-          <span className="font-bold text-gray-900 dark:text-gray-100">
-            {education[0].institute}
-          </span>
-          <span className="text-gray-500 dark:text-gray-400">
-            {education[0].duration}
-          </span>
+      <motion.div variants={itemVariants} className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Education
+        </h3>
+        <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
+          <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+            Bachelor of Engineering
+          </h4>
+          <p className="text-gray-600 dark:text-gray-300">
+            Institute of Engineering & Science IPS Academy
+          </p>
         </div>
-        <div className="text-gray-700 dark:text-gray-300">
-          {education[0].degree}
-        </div>
-      </div>
+      </motion.div>
 
       {/* Skills */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
-        Skills
-      </h3>
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
-        <ul className="space-y-2">
-          {skills.map((skill, idx) => (
-            <li key={idx}>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                {skill.label}:
-              </span>{" "}
-              <span className="text-gray-700 dark:text-gray-300">
-                {skill.value}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <motion.div variants={itemVariants} className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Skills
+        </h3>
+        <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                Programming Languages
+              </h4>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                <li>JavaScript/TypeScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>HTML/CSS</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                Technologies & Frameworks
+              </h4>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                <li>React.js/Next.js</li>
+                <li>Node.js/Express</li>
+                <li>MongoDB/MySQL</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                Tools & Platforms
+              </h4>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                <li>Git/GitHub</li>
+                <li>AWS</li>
+                <li>Docker</li>
+                <li>VS Code</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                Soft Skills
+              </h4>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                <li>Problem Solving</li>
+                <li>Team Collaboration</li>
+                <li>Communication</li>
+                <li>Time Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Experience */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
-        Experience
-      </h3>
-      <div className="space-y-6 mb-8">
-        {experience.map((exp, idx) => (
-          <div
-            key={idx}
-            className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5"
+      <motion.div variants={itemVariants} className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Experience
+        </h3>
+        <div className="space-y-6">
+          <motion.div
+            variants={itemVariants}
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
           >
-            <div className="flex justify-between flex-col md:flex-row md:items-center mb-1">
-              <span className="font-bold text-gray-900 dark:text-gray-100">
-                {exp.company}
-              </span>
-              <span className="text-gray-500 dark:text-gray-400">
-                {exp.duration}
-              </span>
-            </div>
-            <p className="font-semibold text-gray-800 dark:text-gray-200">
-              {exp.title}
+            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              Full Stack Developer
+            </h4>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              Gigatorb Software Pvt Ltd
             </p>
-            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 mt-2 space-y-1">
-              {exp.details.map((d, i) => (
-                <li key={i}>{d}</li>
-              ))}
+            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+              <li>
+                Developed and maintained web applications using React.js and Node.js
+              </li>
+              <li>
+                Implemented responsive designs and ensured cross-browser
+                compatibility
+              </li>
+              <li>
+                Collaborated with the team to deliver high-quality software
+                solutions
+              </li>
             </ul>
-          </div>
-        ))}
-      </div>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
+          >
+            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              Software Developer
+            </h4>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              Techdome Solutions Private Limited
+            </p>
+            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+              <li>
+                Built and maintained RESTful APIs using Node.js and Express
+              </li>
+              <li>
+                Worked with MongoDB and MySQL databases for data storage and
+                retrieval
+              </li>
+              <li>
+                Implemented authentication and authorization using JWT
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
+          >
+            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              Frontend Developer
+            </h4>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              CodeBetter
+            </p>
+            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+              <li>
+                Developed user interfaces using React.js and modern CSS frameworks
+              </li>
+              <li>
+                Implemented responsive designs and ensured cross-browser
+                compatibility
+              </li>
+              <li>
+                Collaborated with designers to create pixel-perfect implementations
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Certificates */}
-      <h3 className="text-xl font-semibold mb-4 text-sky-500 dark:text-sky-400">
-        Certificates
-      </h3>
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 mb-8">
-        <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-          {certificates.map((cert, idx) => (
-            <li key={idx}>{cert}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
+      <motion.div variants={itemVariants}>
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Certificates
+        </h3>
+        <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
+          <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+            <li>React.js Certification - Coursera</li>
+            <li>Java Programming - Udemy</li>
+            <li>Web Development Bootcamp - Udemy</li>
+          </ul>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

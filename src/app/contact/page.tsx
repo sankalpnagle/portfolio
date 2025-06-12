@@ -3,6 +3,29 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { motion, type Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -49,17 +72,36 @@ export default function Contact() {
     "border-0 border-b border-gray-300 dark:border-gray-700 rounded-none bg-transparent focus-visible:ring-0 focus:border-sky-400 focus-visible:border-sky-400 outline-none shadow-none text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400";
 
   return (
-    <div className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200">
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-        Contact
-      </h2>
-      <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
-      <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl sm:p-8 p-3  mb-4">
-        <p className="text-lg font-semibold text-gray-500 dark:text-gray-100 mb-1">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="w-full mx-auto bg-white border dark:bg-gray-900/90 rounded-3xl dark:shadow p-8 transition-colors duration-200"
+    >
+      <motion.div variants={itemVariants}>
+        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+          Contact
+        </h2>
+        <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
+      </motion.div>
+
+      <motion.div
+        variants={itemVariants}
+        className="bg-gray-50 dark:bg-gray-900 rounded-2xl sm:p-8 p-3 mb-4"
+      >
+        <motion.p
+          variants={itemVariants}
+          className="text-lg font-semibold text-gray-500 dark:text-gray-100 mb-1"
+        >
           Have a project in mind or just want to say hello?
-        </p>
-        <form className="space-y-6 mt-5" onSubmit={handleSubmit}>
-          <div>
+        </motion.p>
+
+        <motion.form
+          variants={itemVariants}
+          className="space-y-6 mt-5"
+          onSubmit={handleSubmit}
+        >
+          <motion.div variants={itemVariants}>
             <label
               className="block text-gray-600 dark:text-gray-100 mb-1"
               htmlFor="name"
@@ -67,8 +109,9 @@ export default function Contact() {
               Name *
             </label>
             <Input id="name" name="name" required className={inputClass} />
-          </div>
-          <div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
             <label
               className="block text-gray-600 dark:text-gray-100 mb-1"
               htmlFor="email"
@@ -82,8 +125,9 @@ export default function Contact() {
               required
               className={inputClass}
             />
-          </div>
-          <div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
             <label
               className="block text-gray-600 dark:text-gray-100 mb-1"
               htmlFor="message"
@@ -97,26 +141,38 @@ export default function Contact() {
               rows={4}
               className={inputClass}
             />
-          </div>
-          <Button
-            type="submit"
-            className="mt-2 w-32 bg-[#0892e2] dark:text-white hover:bg-sky-700 dark:bg-sky-600 dark:hover:bg-sky-700 hover:cursor-pointer"
-            disabled={loading}
-          >
-            {loading ? "Sending..." : "Submit"}
-          </Button>
-        </form>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <Button
+              type="submit"
+              className="mt-2 w-32 bg-[#0892e2] dark:text-white hover:bg-sky-700 dark:bg-sky-600 dark:hover:bg-sky-700 hover:cursor-pointer"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Submit"}
+            </Button>
+          </motion.div>
+        </motion.form>
+
         {result === "success" && (
-          <div className="text-green-600 dark:text-green-400 mt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-green-600 dark:text-green-400 mt-4"
+          >
             Message sent successfully!
-          </div>
+          </motion.div>
         )}
         {result === "error" && (
-          <div className="text-red-600 dark:text-red-400 mt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-red-600 dark:text-red-400 mt-4"
+          >
             Something went wrong. Please try again.
-          </div>
+          </motion.div>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
