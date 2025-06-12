@@ -44,16 +44,10 @@ const Header = () => {
       if (window.scrollY > 20) {
         controls.start({
           top: 0,
-          right: 0,
-
-          borderRadius: "0rem",
         });
       } else {
         controls.start({
           top: "1rem",
-          right: "1rem",
-        
-          borderRadius: "0.75rem",
         });
       }
     };
@@ -69,8 +63,8 @@ const Header = () => {
         top: "1rem",
         borderRadius: "0.75rem",
       }}
-      className="bg-white w-full sm:w-fit sm:right-12 mx-auto right-0 dark:bg-gray-900 border fixed z-50 px-4 sm:px-6 md:px-10"
-      style={{ position: "fixed" }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
+      className="bg-white dark:bg-gray-900 border  w-11/12 fixed z-50 px-4 sm:px-6 md:px-10 left-[17px]  sm:w-[35rem] sm:right-[54px]  sm:left-auto mx-auto"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-16">

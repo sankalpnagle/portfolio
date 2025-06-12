@@ -63,7 +63,7 @@ export default function Ball({
         x,
         y,
         background: `radial-gradient(circle, ${color}, #72abca)`,
-        boxShadow: `0 0 50px ${color}`,
+        boxShadow: `0 0 10px ${color}`,
         zIndex: -10,
         // filter: "blur(60px)",
         // opacity: 0.9,

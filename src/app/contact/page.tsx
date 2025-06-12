@@ -54,7 +54,7 @@ export default function Contact() {
         Contact
       </h2>
       <div className="w-20 h-1 bg-sky-400 rounded mb-6" />
-      <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-4">
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl sm:p-8 p-3  mb-4">
         <p className="text-lg font-semibold text-gray-500 dark:text-gray-100 mb-1">
           Have a project in mind or just want to say hello?
         </p>
