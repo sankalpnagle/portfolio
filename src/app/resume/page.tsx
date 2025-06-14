@@ -111,8 +111,11 @@ const Resume = () => {
           <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
             Bachelor of Engineering
           </h4>
-          <p className="text-gray-600 dark:text-gray-300">
-            Institute of Engineering & Science IPS Academy
+          <p className="text-gray-600 flex justify-between dark:text-gray-300">
+            <span>Institute of Engineering & Science IPS Academy</span> <span className="text-sm">Sep 2016 - July 2020 </span>
+          </p>
+          <p className="text-sm mt-1.5 text-gray-600 dark:text-gray-300">
+            GPA : 7.1
           </p>
         </div>
       </motion.div>
@@ -129,10 +132,10 @@ const Resume = () => {
                 Programming Languages
               </h4>
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                <li>JavaScript/TypeScript</li>
-                <li>Python</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
                 <li>Java</li>
-                <li>HTML/CSS</li>
+                <li>HTML, CSS</li>
               </ul>
             </div>
             <div>
@@ -140,10 +143,10 @@ const Resume = () => {
                 Technologies & Frameworks
               </h4>
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                <li>React.js/Next.js</li>
-                <li>Node.js/Express</li>
-                <li>MongoDB/MySQL</li>
-                <li>Tailwind CSS</li>
+                <li>React.js, Next.js, Node.js, Express</li>
+                <li>MongoDB, MySQL</li>
+                <li>Tailwind CSS, Bootstrap</li>
+                <li>Sequalize, Prisma</li>
               </ul>
             </div>
             <div>
@@ -178,78 +181,32 @@ const Resume = () => {
           Experience
         </h3>
         <div className="space-y-6">
-          <motion.div
-            variants={itemVariants}
-            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
-          >
-            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-              Full Stack Developer
-            </h4>
-            <p className="text-gray-600 dark:text-gray-300 mb-2">
-              Gigatorb Software Pvt Ltd
-            </p>
-            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-              <li>
-                Developed and maintained web applications using React.js and Node.js
-              </li>
-              <li>
-                Implemented responsive designs and ensured cross-browser
-                compatibility
-              </li>
-              <li>
-                Collaborated with the team to deliver high-quality software
-                solutions
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
-          >
-            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-              Software Developer
-            </h4>
-            <p className="text-gray-600 dark:text-gray-300 mb-2">
-              Techdome Solutions Private Limited
-            </p>
-            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-              <li>
-                Built and maintained RESTful APIs using Node.js and Express
-              </li>
-              <li>
-                Worked with MongoDB and MySQL databases for data storage and
-                retrieval
-              </li>
-              <li>
-                Implemented authentication and authorization using JWT
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
-          >
-            <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-              Frontend Developer
-            </h4>
-            <p className="text-gray-600 dark:text-gray-300 mb-2">
-              CodeBetter
-            </p>
-            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-              <li>
-                Developed user interfaces using React.js and modern CSS frameworks
-              </li>
-              <li>
-                Implemented responsive designs and ensured cross-browser
-                compatibility
-              </li>
-              <li>
-                Collaborated with designers to create pixel-perfect implementations
-              </li>
-            </ul>
-          </motion.div>
+          {experience.map((item) => (
+            <>
+              <motion.div
+                variants={itemVariants}
+                className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6"
+              >
+                <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                  {item?.title}
+                </h4>
+                <p className="text-gray-600  flex justify-between dark:text-gray-300 mb-2">
+                  <p> {item?.company}</p>
+                  <span className="text-sm"> {item?.duration}</span>
+                </p>
+                <ul className="space-y-1  text-gray-600 dark:text-gray-300">
+                  {item.details.map((ob, index) => (
+                    <li
+                      key={index}
+                      className="relative  before:content-['•'] pl-6 before:absolute before:left-0  before:text-2xl"
+                    >
+                      {ob}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </>
+          ))}
         </div>
       </motion.div>
 
@@ -260,9 +217,9 @@ const Resume = () => {
         </h3>
         <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
           <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-            <li>React.js Certification - Coursera</li>
-            <li>Java Programming - Udemy</li>
-            <li>Web Development Bootcamp - Udemy</li>
+            {certificates.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         </div>
       </motion.div>
