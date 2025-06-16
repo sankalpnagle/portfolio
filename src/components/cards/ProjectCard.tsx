@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   bg = "bg-pink-50",
 }) => (
   <div
-    className={`group bg-gray-50 dark:bg-gray-900 border  dark:border-2 overflow-hidden rounded-2xl max-w-xs w-full transition-all duration-300 hover:-translate-y-1`}
+    className={`group bg-white shadow-xs dark:bg-gray-900 border  dark:border-2 overflow-hidden rounded-md w-[20rem] max-w-xs  transition-all duration-300 hover:-translate-y-1`}
   >
     <div
       className={`${bg} dark:bg-opacity-20 overflow-hidden mb-4 flex items-center justify-center h-48 sm:h-48 relative`}
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="text-gray-500 dark:text-gray-400 text-sm mb-2 font-medium">
         {tags}
       </div>
-      <h3 className="font-bold text-xl text-gray-800 dark:text-gray-200 group-hover:text-sky-500 dark:group-hover:text-sky-400 transition-colors duration-300">
+      <h3 className="font-bold text-xl text-gray-800 dark:text-gray-200 group-hover:text-sky-800 dark:group-hover:text-sky-400 transition-colors duration-300">
         {title}
       </h3>
     </div>

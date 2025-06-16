@@ -35,7 +35,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl rounded-3xl dark:bg-gray-900 p-0 overflow-hidden w-[95vw] sm:w-full">
+      <DialogContent className="max-w-4xl rounded-xl border-2 dark:bg-gray-900 p-0 overflow-hidden w-[98vw] sm:w-full">
         <div className="p-4 sm:p-8 max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl sm:text-3xl font-bold text-center text-sky-500 dark:text-white mb-4 sm:mb-6">
