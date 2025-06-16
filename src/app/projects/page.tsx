@@ -13,7 +13,7 @@ const projects = [
     type: "Website",
     client: "Client Project",
     languages: "React, Node.js, Firebase",
-    preview: "",
+    preview: "https://pets-story-frontend.vercel.app/",
     description:
       "Story of Pets is a full-stack web app where users can register up to five pets and maintain weekly and monthly journals. It helps track pet activities, routines, and memories, with user authentication and Firebase database integration.",
   },
