@@ -5,18 +5,18 @@ import ProjectModal from "@/components/modal/ProjectModal";
 import { motion, type Variants } from "framer-motion";
 
 const projects = [
-  {
-    image: "/images/pet-img.jpg",
-    tags: "Pet Journal, Web App",
-    title: "Story of Pets",
-    category: "Full Stack App",
-    type: "Website",
-    client: "Client Project",
-    languages: "React, Node.js, Firebase",
-    preview: "https://pets-story-frontend.vercel.app/",
-    description:
-      "Story of Pets is a full-stack web app where users can register up to five pets and maintain weekly and monthly journals. It helps track pet activities, routines, and memories, with user authentication and Firebase database integration.",
-  },
+  // {
+  //   image: "/images/pet-img.jpg",
+  //   tags: "Pet Journal, Web App",
+  //   title: "Story of Pets",
+  //   category: "Full Stack App",
+  //   type: "Website",
+  //   client: "Client Project",
+  //   languages: "React, Node.js, Firebase",
+  //   preview: "https://pets-story-frontend.vercel.app/",
+  //   description:
+  //     "Story of Pets is a full-stack web app where users can register up to five pets and maintain weekly and monthly journals. It helps track pet activities, routines, and memories, with user authentication and Firebase database integration.",
+  // },
   {
     image: "/images/port-img.png",
     tags: "Marine Industry, Calculator",
