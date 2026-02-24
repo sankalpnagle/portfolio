@@ -25,15 +25,15 @@ const aboutCards = [
     icon: <BsBrush className="text-sky-400" />,
     title: "Web Design",
     description:
-      "Creating responsive, accessible, and pixel-perfect interfaces using React, Tailwind CSS, ShadCN, and TypeScript.",
+      "Creating responsive, accessible, and pixel-perfect interfaces using React, Tailwind CSS, ShadCN, and Material UI.",
     color: "bg-gray-50 dark:bg-gray-900",
   },
   {
     icon: <VscCloud className="text-sky-400" />,
     title: "Cloud & Deployment",
     description:
-      "Deploying applications on AWS with Docker, setting up CI/CD pipelines, and managing production environments.",
-    color: "bg-gray-50 dark:bg-gray-900",
+      "Deploying applications on AWS with GitHub Actions, setting up CI/CD pipelines, and managing production environments.",
+    color: "bg-gray-50 dark:bg-slate-900",
   },
 ];
 
@@ -79,13 +79,13 @@ export default function Home() {
         variants={itemVariants}
         className="text-gray-600 bg-white rounded-xl py-6 px-5 dark:bg-gray-900 transition-colors duration-200 dark:text-gray-100 mb-2"
       >
-        I'm a skilled Full-Stack MERN Developer focused on building scalable,
-        responsive web applications using React, Next.js, Node.js, MongoDB, and
-        SQL. I've delivered real-world solutions across healthcare, logistics,
-        and pet care owning both frontend and backend development, along with
-        deployment on AWS. I write clean, maintainable code and work with modern
-        tools like TypeScript, Prisma, and Docker to create high-performance
-        applications.
+        Full-Stack Web Developer with 2 years of experience in building and
+        deploying scalable web applications using the MERN stack and cloud
+        technologies. Proficient in JavaScript, React.js, Next.js, Node.js,
+        Express.js, MongoDB, MySQL, and AWS for developing secure,
+        high-performance solutions. Experienced in implementing CI/CD pipelines
+        for automated development workflows. Passionate about creating clean,
+        maintainable, and user-focused software solutions.
       </motion.p>
 
       {/* What I Do Section */}

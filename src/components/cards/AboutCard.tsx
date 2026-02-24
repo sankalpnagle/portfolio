@@ -21,7 +21,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
       <h3 className="font-semibold text-xl mb-2 text-gray-900 dark:text-gray-100">
         {title}
       </h3>
-      <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+      <p className="text-gray-500 dark:text-gray-200 leading-relaxed">
         {description}
       </p>
     </div>
